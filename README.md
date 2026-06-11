@@ -4,7 +4,13 @@ VKOGA-style greedy kernel solver core v2.  Pure NumPy, no scikit-learn dependenc
 
 ## Install
 
-Clone the repo then run from the project root:
+Install directly from GitHub:
+
+```bash
+pip install git+https://github.com/oY-w-Yo/vkoga2.git
+```
+
+Or clone the repo and run from the project root:
 
 ```bash
 pip install -e .
@@ -16,6 +22,21 @@ For local development inside the umbrella `Codebase` workspace:
 
 ```bash
 pip install -e /path/to/vkoga2
+```
+
+## Tests
+
+This repository intentionally contains only the installable package. The local
+`Codebase` workspace keeps tests outside this repo at:
+
+```text
+Codebase/tests/vkoga2
+```
+
+From the `Codebase` root:
+
+```bash
+python -m pytest tests/vkoga2
 ```
 
 ## Quick start
