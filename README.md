@@ -42,6 +42,9 @@ rmse = np.sqrt(np.mean((pred - y) ** 2))
 print(f"RMSE: {rmse:.6e}, centers: {model.n_selected_}")
 ```
 
+For the detailed working usage note, see
+[`vkoga2_usage_note.md`](vkoga2_usage_note.md).
+
 ## Dependencies
 
 - Python >= 3.10
