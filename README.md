@@ -18,27 +18,6 @@ pip install -e .
 
 After installation, `from vkoga2 import VKOGARebuilt` works from anywhere.
 
-For local development inside the umbrella `Codebase` workspace:
-
-```bash
-pip install -e /path/to/vkoga2
-```
-
-## Tests
-
-This repository intentionally contains only the installable package. The local
-`Codebase` workspace keeps tests outside this repo at:
-
-```text
-Codebase/tests/vkoga2
-```
-
-From the `Codebase` root:
-
-```bash
-python -m pytest tests/vkoga2
-```
-
 ## Quick start
 
 ```python
