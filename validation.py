@@ -37,6 +37,14 @@ def _as_1d_finite_array(values, *, name: str) -> np.ndarray:
     return arr
 
 
+def _as_valid_finite_point_matrix(X, *, name: str) -> np.ndarray:
+    """Return ``X`` as a finite floating-point matrix with shape ``(n, d)``."""
+    arr = as_valid_point_matrix(X, name=name)
+    if not np.all(np.isfinite(arr)):
+        raise ValueError(f"{name} must contain only finite values.")
+    return arr
+
+
 def _as_1d_bool_array(values, *, name: str) -> np.ndarray:
     """Return ``values`` as a one-dimensional bool array."""
     arr = np.asarray(values)

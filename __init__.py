@@ -1,5 +1,8 @@
 from .distances import pairwise_distance, pairwise_euclidean_distance
-from .data import GreedyTrainingData, build_greedy_training_data
+from .data import (
+    TrainingData,
+    build_training_data,
+)
 from .validation import (
     as_valid_point_matrix,
     validate_index_range,
@@ -35,7 +38,7 @@ from .solver import (
 
 __all__ = [
     "GaussianKernel",
-    "GreedyTrainingData",
+    "TrainingData",
     "GreedyHistory",
     "GreedyStepRecord",
     "Kernel",
@@ -53,7 +56,7 @@ __all__ = [
     "VKOGARebuilt",
     "kernel_from_config",
     "as_valid_point_matrix",
-    "build_greedy_training_data",
+    "build_training_data",
     "model_selection_rule_from_config",
     "pairwise_distance",
     "pairwise_euclidean_distance",

@@ -111,7 +111,7 @@ fit(X, y)
 Core solver internal training data:
 
 ```text
-build_greedy_training_data(...)
+build_training_data(...)
     X_candidates      shape (n_training_points, dim)
     y_candidates      shape (n_training_points,)
 ```
@@ -119,7 +119,7 @@ build_greedy_training_data(...)
 Core solver fitted outputs:
 
 ```text
-training_data_                  validated GreedyTrainingData
+training_data_                  validated TrainingData
 history_                        GreedyHistory with scalar records
                                 (includes condition_number per iteration
                                  when store_cond=True and SPD and n≤2000)
@@ -153,7 +153,7 @@ The fit path is:
 raw X, y
   |
   v
-data.build_greedy_training_data
+data.build_training_data
   |
   v
 GreedySolverState.create(data, kernel, max_centers)

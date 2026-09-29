@@ -8,7 +8,7 @@ from typing import Any, Dict
 
 import numpy as np
 
-from .data import GreedyTrainingData, build_greedy_training_data
+from .data import TrainingData, build_training_data
 from .history import GreedyHistory, GreedyStepRecord
 from .kernels import Kernel
 from .model_selection import (
@@ -59,7 +59,7 @@ class GreedySolverState:
     @classmethod
     def create(
         cls,
-        data: GreedyTrainingData,
+        data: TrainingData,
         kernel: Kernel,
         max_centers: int,
     ) -> "GreedySolverState":
@@ -293,7 +293,7 @@ class VKOGARebuilt:
                 f"VKOGARebuilt.{method_name}() called before fit()."
             )
 
-    def _print_fit_started(self, training_data: GreedyTrainingData) -> None:
+    def _print_fit_started(self, training_data: TrainingData) -> None:
         if not self.verbose:
             return
         print(
@@ -331,7 +331,7 @@ class VKOGARebuilt:
 
     def _compute_new_basis_values(
         self,
-        data: GreedyTrainingData,
+        data: TrainingData,
         state: GreedySolverState,
         selected_candidate_index: int,
     ) -> tuple[int, float, np.ndarray]:
@@ -375,7 +375,7 @@ class VKOGARebuilt:
         """
         # --- 1. Initialisation ---
         _t0 = time.perf_counter()
-        training_data = build_greedy_training_data(X, y)
+        training_data = build_training_data(X, y)
         state = GreedySolverState.create(
             training_data,
             self.kernel,
