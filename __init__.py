@@ -1,6 +1,10 @@
 from .distances import pairwise_distance, pairwise_euclidean_distance
 from .data import (
+    PDE_FUNCTIONAL_DIRICHLET,
+    PDE_FUNCTIONAL_INTERIOR,
+    PDETrainingData,
     TrainingData,
+    build_pde_training_data,
     build_training_data,
 )
 from .validation import (
@@ -31,6 +35,18 @@ from .model_selection import (
     ModelSelectionResult,
     model_selection_rule_from_config,
 )
+from .pde_composer import (
+    OperatorComposer,
+    SecondOrderEllipticComposer,
+)
+from .pde_solver import (
+    PDEGreedySolver,
+    PDEGreedyState,
+    PDE_STOP_ALL_CANDIDATES,
+    PDE_STOP_MAX_CENTERS,
+    PDE_STOP_POWER_TOO_SMALL,
+    PDE_STOP_RESIDUAL_TOO_SMALL,
+)
 from .solver import (
     GreedySolverState,
     VKOGARebuilt,
@@ -38,6 +54,11 @@ from .solver import (
 
 __all__ = [
     "GaussianKernel",
+    "PDE_FUNCTIONAL_DIRICHLET",
+    "PDE_FUNCTIONAL_INTERIOR",
+    "PDEGreedySolver",
+    "PDEGreedyState",
+    "PDETrainingData",
     "TrainingData",
     "GreedyHistory",
     "GreedyStepRecord",
@@ -52,8 +73,15 @@ __all__ = [
     "KeepLastModelSelectionRule",
     "ModelSelectionResult",
     "PointSelectionResult",
+    "OperatorComposer",
+    "SecondOrderEllipticComposer",
     "GreedySolverState",
+    "PDE_STOP_ALL_CANDIDATES",
+    "PDE_STOP_MAX_CENTERS",
+    "PDE_STOP_POWER_TOO_SMALL",
+    "PDE_STOP_RESIDUAL_TOO_SMALL",
     "VKOGARebuilt",
+    "build_pde_training_data",
     "kernel_from_config",
     "as_valid_point_matrix",
     "build_training_data",

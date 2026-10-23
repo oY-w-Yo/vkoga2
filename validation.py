@@ -55,6 +55,16 @@ def _as_1d_bool_array(values, *, name: str) -> np.ndarray:
     return arr
 
 
+def _as_1d_integer_array(values, *, name: str) -> np.ndarray:
+    """Return ``values`` as a one-dimensional integer array."""
+    arr = np.asarray(values)
+    if arr.ndim != 1:
+        raise ValueError(f"{name} must be a one-dimensional array; got shape {arr.shape}.")
+    if not np.issubdtype(arr.dtype, np.integer):
+        raise ValueError(f"{name} must be an integer array.")
+    return arr.astype(int, copy=False)
+
+
 # =============================================================================
 # Scalar validators (validate_*)
 # =============================================================================
