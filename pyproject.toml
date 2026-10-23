@@ -14,3 +14,7 @@ dependencies = [
 [tool.setuptools]
 packages = ["vkoga2"]
 package-dir = { "vkoga2" = "." }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".."]
